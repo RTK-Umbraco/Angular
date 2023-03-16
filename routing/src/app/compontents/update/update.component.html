@@ -1,0 +1,56 @@
+<p></p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup] ="carFormGroup" (ngSubmit)="onSubmit();">
+                <div style="width: 100%">
+
+                    <h4>Enter the id of the car. This will teriminate what car will be updated</h4>
+                    <mat-form-field class="full-width-field input-field" appearance="fill" style=" width: 100%;">
+                        <mat-label>Enter the id of the car</mat-label>
+                        <input matInput placeholder="1" type="text" class="form-control" id="inputRank" 
+                        formControlName="id" [class.is-invalid] = "carFormGroup.get('id')!.invalid && carFormGroup.get('id')!.touched" required>
+                        <mat-error *ngIf="carFormGroup.invalid">{{getErrorMessageRank()}}</mat-error>
+                    </mat-form-field>
+
+                    <h4>Enter the rank of the car</h4>
+                    <mat-form-field class="full-width-field input-field" appearance="fill" style=" width: 100%;">
+                        <mat-label>Enter the rank of the car</mat-label>
+                        <input matInput placeholder="1" type="text" class="form-control" id="inputRank" 
+                        formControlName="rank" [class.is-invalid] = "carFormGroup.get('rank')!.invalid && carFormGroup.get('rank')!.touched" required>
+                        <mat-error *ngIf="carFormGroup.invalid">{{getErrorMessageRank()}}</mat-error>
+                    </mat-form-field>
+                    
+                    <h4>Enter the model of the car</h4>
+                    <mat-form-field class="full-width-field input-field" appearance="fill" style="width: 100%">
+                        <mat-label>Enter the model of the car</mat-label>
+                        <input matInput placeholder="Tesla model s" type="text" class="form-control" id="inputModel" 
+                        formControlName="model" [class.is-invalid] = "carFormGroup.get('model')!.invalid && carFormGroup.get('model')!.touched" required>
+                        <mat-error *ngIf="carFormGroup.invalid">{{getErrorMessageModel()}}</mat-error>
+                    </mat-form-field>
+                    
+                    
+                    <h4>Enter the quantity of the car</h4>
+                    <mat-form-field class="full-width-field input-field" appearance="fill" style="width: 100%">
+                        <mat-label>Enter the rank of the car</mat-label>
+                        <input matInput placeholder="1234" type="text" class="form-control" id="inputQuantity" 
+                        formControlName="quantity" [class.is-invalid] = "carFormGroup.get('quantity')!.invalid && carFormGroup.get('quantity')!.touched" required>
+                        <mat-error *ngIf="carFormGroup.invalid">{{getErrorMessageQuantity()}}</mat-error>
+                    </mat-form-field>
+                    
+                    <h4>Enter the change quantity percent of the car</h4>
+                    <mat-form-field class="full-width-field input-field" appearance="fill" style="width: 100%">
+                        <mat-label>Enter the rank of the car</mat-label>
+                            <input matInput placeholder="1234" type="text" class="form-control" id="inputChangeQuantityPercent" 
+                            formControlName="changeQuantityPercent" [class.is-invalid] = "carFormGroup.get('changeQuantityPercent')!.invalid && carFormGroup.get('changeQuantityPercent')!.touched" required>
+                            <mat-error *ngIf="carFormGroup.invalid">{{getErrorMessageChangeQuantityPercent()}}</mat-error>
+                    </mat-form-field>
+                </div>
+        
+                <div>
+                    <button mat-flat-button type="submit" class="btn-submit" type="submit" [disabled]="!carFormGroup.valid">Update car</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
