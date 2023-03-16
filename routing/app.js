@@ -54,14 +54,12 @@ app.put('/update/car', function (req, res){
     res.send({'rank': rank, 'model':model, 'quantity':quantity, 'changeQuantityPercent':changeQuantityPercent});
 })
 
-app.delete('/delete/car', function (req, res){
-    const id = req.body.id;
-    var car = array.indexOf(id);
-    
-    array.splice(car, 1);
+app.delete('/delete/car/:id', function (req, res){
+    const id = parseInt(req.params.id) - 1;
+    array.splice(id, 1);
     res.send();
-})
-
-app.listen(port, () => {
-    console.log(`Example app listing on part ${port}`)
+    });
+    
+    app.listen(port, () => {
+        console.log(`Example app listing on part ${port}`)
 });

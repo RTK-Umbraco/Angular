@@ -46,7 +46,10 @@ export class DeleteComponent {
       const car = {} as CarResource
       car.id = this.carFormGroup.get("id")?.value;  
 
-      this.carsServiceApi.updateCar(car).subscribe((resp) => {
+      console.log(car.id);
+      
+
+      this.carsServiceApi.deleteCar(car).subscribe((resp) => {
         next: {
           console.log(resp);
           this.snackBar.open("Car has been deleted")._dismissAfter(3000);

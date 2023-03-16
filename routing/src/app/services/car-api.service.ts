@@ -36,7 +36,8 @@ export class CarApiService {
 
   deleteCar(carResource: CarResource): Observable<CarResource>{
     //Look into this
-    const cars$ = this.httpClient.delete<CarResource>(this.url + "/" + this.delete)
+    console.log(carResource.id as number);
+    const cars$ = this.httpClient.delete<CarResource>(this.url + "/" + this.delete + "/" + carResource.id)
     return cars$;
   }
 }
