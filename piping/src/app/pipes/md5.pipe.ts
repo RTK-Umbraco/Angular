@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { of } from 'rxjs/internal/observable/of';
 import {Md5} from 'ts-md5';
 
 @Pipe({
