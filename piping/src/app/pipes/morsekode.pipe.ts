@@ -19,8 +19,6 @@ export class MorsekodePipe implements PipeTransform {
 
   code: string = "";
   transform(value: string, ...args: unknown[]): unknown {
-
-
     return this.sentenceToMorse(value);
   }
 
